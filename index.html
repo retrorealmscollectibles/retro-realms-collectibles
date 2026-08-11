@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Retro Realms Collectibles — Coming Soon</title>
+  <meta name="description" content="The Retro Realms Collectibles — retro games, cards, comics, and more. Coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      background: #0a0a1a url('background.png') center center / cover no-repeat fixed;
+      color: #e0e0e0;
+      overflow: hidden;
+    }
+
+    /* Dark overlay so text stays readable */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      max-width: 640px;
+    }
+
+    /* Controller icon */
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px rgba(0, 255, 200, 0.3));
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Logo / title */
+    .logo {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #ff6ec7, #ffcc00, #ff6ec7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px rgba(255, 110, 199, 0.4));
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 3rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.65rem, 2vw, 0.85rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border: 2px solid rgba(0, 255, 200, 0.3);
+      border-radius: 4px;
+      color: #ff6ec7;
+      background: rgba(0, 255, 200, 0.04);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { border-color: rgba(0, 255, 200, 0.3); box-shadow: 0 0 0 rgba(0, 255, 200, 0); }
+      50% { border-color: rgba(0, 255, 200, 0.6); box-shadow: 0 0 20px rgba(0, 255, 200, 0.1); }
+    }
+
+    .categories {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .categories span {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #999;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: #444;
+    }
+
+    .footer a {
+      color: #777;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #ff6ec7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🎮</div>
+    <h1 class="logo">The Retro Realms<br>Collectibles</h1>
+    <p class="tagline">Level up your collection</p>
+    <div class="coming-soon">Coming Soon</div>
+    <div class="categories">
+      <span>Retro Games</span>
+      <span>Trading Cards</span>
+      <span>Comics</span>
+      <span>Vintage Toys</span>
+      <span>Collectibles</span>
+    </div>
+    <p class="footer">theretrorealmscollectibles.com · <a href="privacy-policy.html">Privacy Policy</a></p>
+  </div>
+</body>
+</html>
