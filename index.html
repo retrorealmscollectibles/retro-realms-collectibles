@@ -52,7 +52,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 485px);
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 485px);
       align-items: center;
       gap: clamp(2rem, 7vw, 6rem);
     }
@@ -228,7 +228,8 @@
 
     .video-frame {
       position: relative;
-      width: min(100%, 485px);
+      width: 485px;
+      max-width: 100%;
       justify-self: end;
       padding: 3px;
       border-radius: 22px;
@@ -251,7 +252,8 @@
     .video-frame video {
       display: block;
       width: 100%;
-      aspect-ratio: 479 / 705;
+      height: 705px;
+      aspect-ratio: auto;
       border-radius: 19px;
       background: #000;
       object-fit: cover;
@@ -303,6 +305,11 @@
         width: min(92vw, 400px);
         justify-self: center;
       }
+
+      .video-frame video {
+        height: auto;
+        aspect-ratio: 479 / 705;
+      }
     }
 
     @media (max-width: 430px) {
@@ -329,14 +336,14 @@
         <div class="icon" aria-hidden="true">🎮</div>
         <h1 class="logo" id="site-title">The Retro Realms<br>Collectibles</h1>
         <p class="tagline">Level up your collection</p>
-        <nav class="actions" aria-label="Buy or sell collectibles">
-          <a class="sell-button" href="sell.html">
+        <section class="actions" aria-label="Buy or sell collectibles">
+          <div class="sell-button">
             <span>
               <span class="action-kicker">Cards · games · toys · comics</span>
               <span class="action-label">Sell your collection</span>
             </span>
             <span class="action-arrow" aria-hidden="true">→</span>
-          </a>
+          </div>
 
           <div class="shop">
             <span class="shop-title">Shop the collection</span>
@@ -346,7 +353,7 @@
               <span class="market-link is-pending" aria-disabled="true">Facebook</span>
             </div>
           </div>
-        </nav>
+        </section>
       </div>
 
       <div class="video-frame">
