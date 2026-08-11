@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Retro Realms Collectibles</title>
-  <meta name="description" content="The Retro Realms Collectibles — retro games, trading cards, comics, vintage toys, and more.">
+  <meta name="description" content="Sell your collection or shop retro games, trading cards, comics, vintage toys, and more at The Retro Realms Collectibles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
   <style>
@@ -93,35 +93,137 @@
       text-transform: uppercase;
     }
 
-    .coming-soon {
-      display: inline-block;
+    .actions {
+      display: grid;
+      gap: 1.25rem;
+      width: min(100%, 600px);
       margin-top: 2rem;
-      padding: 0.9rem 1.35rem;
-      border: 2px solid rgba(0, 255, 208, 0.48);
-      border-radius: 5px;
-      color: #ff79ca;
-      background: rgba(0, 255, 208, 0.07);
-      box-shadow: 0 0 28px rgba(0, 255, 208, 0.08);
+    }
+
+    .sell-button {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 1rem;
+      min-height: 108px;
+      padding: 1.15rem 1.25rem;
+      overflow: hidden;
+      border: 2px solid #00ffd0;
+      border-radius: 10px;
+      color: #080816;
+      background: linear-gradient(115deg, #00ffd0 0 64%, #ffcc00 64% 100%);
+      box-shadow:
+        7px 7px 0 #ff6ec7,
+        0 0 38px rgba(0, 255, 208, 0.2);
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .sell-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.24;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0 5px,
+        rgba(255, 255, 255, 0.45) 5px 6px
+      );
+    }
+
+    .sell-button:hover,
+    .sell-button:focus-visible {
+      transform: translate(-3px, -3px);
+      box-shadow:
+        10px 10px 0 #ff6ec7,
+        0 0 48px rgba(0, 255, 208, 0.3);
+    }
+
+    .sell-button:focus-visible,
+    .market-link:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 4px;
+    }
+
+    .action-kicker,
+    .shop-title {
+      display: block;
       font-family: 'Press Start 2P', monospace;
-      font-size: clamp(0.6rem, 1.5vw, 0.76rem);
-      letter-spacing: 0.2em;
+      font-size: 0.58rem;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-top: 2rem;
+    .action-kicker {
+      margin-bottom: 0.6rem;
+      opacity: 0.66;
     }
 
-    .categories span {
-      padding: 0.45rem 0.78rem;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 999px;
-      color: #c7c7d0;
-      background: rgba(255, 255, 255, 0.07);
-      font-size: 0.74rem;
+    .action-label {
+      display: block;
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.88rem, 2vw, 1.12rem);
+      line-height: 1.45;
+    }
+
+    .action-arrow {
+      font-size: 2rem;
+      line-height: 1;
+      transition: transform 160ms ease;
+    }
+
+    .sell-button:hover .action-arrow,
+    .sell-button:focus-visible .action-arrow {
+      transform: translateX(5px);
+    }
+
+    .shop {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .shop-title {
+      color: #a9a9b7;
+    }
+
+    .market-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .market-link {
+      display: grid;
+      min-height: 50px;
+      place-items: center;
+      padding: 0.8rem 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 7px;
+      color: #f6f6fb;
+      background: rgba(8, 8, 22, 0.78);
+      box-shadow: 3px 3px 0 rgba(255, 204, 0, 0.74);
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.52rem, 1.2vw, 0.64rem);
+      line-height: 1.35;
+      text-align: center;
+      text-decoration: none;
+      transition: border-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .market-link:hover,
+    .market-link:focus-visible {
+      border-color: #ff6ec7;
+      color: #00ffd0;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 #ff6ec7;
+    }
+
+    .market-link.is-pending {
+      cursor: default;
+      opacity: 0.62;
     }
 
     .video-frame {
@@ -192,13 +294,24 @@
         text-align: center;
       }
 
-      .categories {
-        justify-content: center;
+      .actions {
+        margin-inline: auto;
+        text-align: left;
       }
 
       .video-frame {
         width: min(92vw, 400px);
         justify-self: center;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .sell-button {
+        min-height: 96px;
+      }
+
+      .market-links {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -216,14 +329,24 @@
         <div class="icon" aria-hidden="true">🎮</div>
         <h1 class="logo" id="site-title">The Retro Realms<br>Collectibles</h1>
         <p class="tagline">Level up your collection</p>
-        <div class="coming-soon">Coming Soon</div>
-        <div class="categories" aria-label="Collectible categories">
-          <span>Retro Games</span>
-          <span>Trading Cards</span>
-          <span>Comics</span>
-          <span>Vintage Toys</span>
-          <span>Collectibles</span>
-        </div>
+        <nav class="actions" aria-label="Buy or sell collectibles">
+          <a class="sell-button" href="sell.html">
+            <span>
+              <span class="action-kicker">Cards · games · toys · comics</span>
+              <span class="action-label">Sell your collection</span>
+            </span>
+            <span class="action-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <div class="shop">
+            <span class="shop-title">Shop the collection</span>
+            <div class="market-links">
+              <a class="market-link" href="https://www.ebay.com/str/theretrorealmscollectables" target="_blank" rel="noopener noreferrer">eBay</a>
+              <span class="market-link is-pending" aria-disabled="true">Mercari</span>
+              <span class="market-link is-pending" aria-disabled="true">Facebook</span>
+            </div>
+          </div>
+        </nav>
       </div>
 
       <div class="video-frame">
