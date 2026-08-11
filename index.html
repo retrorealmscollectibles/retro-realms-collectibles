@@ -61,40 +61,26 @@
       max-width: 660px;
     }
 
-    .icon {
-      margin-bottom: 1.75rem;
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      line-height: 1;
-      filter: drop-shadow(0 0 24px rgba(0, 255, 208, 0.34));
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
     .logo {
-      font-family: 'Press Start 2P', monospace;
-      font-size: clamp(1.2rem, 2.8vw, 2rem);
-      line-height: 1.55;
-      background: linear-gradient(135deg, #ff6ec7 5%, #ffcc00 52%, #ff6ec7 95%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 30px rgba(255, 110, 199, 0.35));
+      width: min(100%, 570px);
+      line-height: 0;
     }
 
-    .logo-line {
+    .brand-logo {
       display: block;
-      white-space: nowrap;
+      width: 100%;
+      height: auto;
+      filter:
+        drop-shadow(0 0 2px rgba(255, 255, 255, 0.74))
+        drop-shadow(0 0 28px rgba(255, 110, 199, 0.3));
     }
 
     .tagline {
-      margin-top: 1rem;
+      margin-top: -0.35rem;
       color: #ffd0e8;
-      font-size: clamp(0.78rem, 1.8vw, 1rem);
+      font-size: clamp(0.62rem, 1.2vw, 0.74rem);
       letter-spacing: 0.16em;
+      text-align: center;
       text-transform: uppercase;
     }
 
@@ -192,6 +178,7 @@
 
     .shop-title {
       color: #a9a9b7;
+      text-align: center;
     }
 
     .market-links {
@@ -327,23 +314,15 @@
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .icon {
-        animation: none;
-      }
-    }
   </style>
 </head>
 <body>
   <main class="page">
     <section class="hero" aria-labelledby="site-title">
       <div class="identity">
-        <div class="icon" aria-hidden="true">🎮</div>
         <h1 class="logo" id="site-title">
-          <span class="logo-line">The Retro Realms</span>
-          <span class="logo-line">Collectibles</span>
+          <img class="brand-logo" src="retro-realms-logo-transparent.png" width="1400" height="835" alt="The Retro Realms Collectibles" fetchpriority="high">
         </h1>
-        <p class="tagline">We Buy Nostalgia</p>
         <section class="actions" aria-label="Buy or sell collectibles">
           <div class="sell-button">
             <span>
@@ -352,14 +331,15 @@
             </span>
             <span class="action-arrow" aria-hidden="true">→</span>
           </div>
+          <p class="tagline">We Buy Nostalgia</p>
 
           <div class="shop">
-            <span class="shop-title">Shop Our Stores</span>
             <div class="market-links">
               <a class="market-link" href="https://www.ebay.com/str/theretrorealmscollectables" target="_blank" rel="noopener noreferrer">eBay</a>
               <span class="market-link is-pending" aria-disabled="true">Mercari</span>
               <span class="market-link is-pending" aria-disabled="true">Facebook</span>
             </div>
+            <span class="shop-title">Shop Our Stores</span>
           </div>
         </section>
       </div>
