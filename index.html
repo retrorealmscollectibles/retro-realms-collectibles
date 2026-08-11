@@ -52,7 +52,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(270px, 360px);
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
       align-items: center;
       gap: clamp(2rem, 7vw, 6rem);
     }
@@ -126,7 +126,7 @@
 
     .video-frame {
       position: relative;
-      width: min(100%, 360px);
+      width: min(100%, 430px);
       justify-self: end;
       padding: 3px;
       border-radius: 22px;
@@ -149,10 +149,11 @@
     .video-frame video {
       display: block;
       width: 100%;
-      aspect-ratio: 704 / 1280;
+      aspect-ratio: 2 / 3;
       border-radius: 19px;
       background: #000;
       object-fit: cover;
+      object-position: center;
     }
 
     .footer {
@@ -196,7 +197,7 @@
       }
 
       .video-frame {
-        width: min(88vw, 340px);
+        width: min(92vw, 400px);
         justify-self: center;
       }
     }
