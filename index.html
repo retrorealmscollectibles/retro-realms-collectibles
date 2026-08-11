@@ -95,11 +95,11 @@
       position: relative;
       isolation: isolate;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: 1fr;
       align-items: center;
       gap: 1rem;
       min-height: 108px;
-      padding: 1.15rem 1.25rem;
+      padding: 1.15rem 3.5rem;
       overflow: hidden;
       border: 2px solid #ffb15c;
       border-radius: 10px;
@@ -109,6 +109,7 @@
         7px 7px 0 #6e36d9,
         0 0 38px rgba(255, 79, 154, 0.24);
       text-decoration: none;
+      text-align: center;
       transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
@@ -161,14 +162,18 @@
     }
 
     .action-arrow {
+      position: absolute;
+      top: 50%;
+      right: 1.25rem;
       font-size: 2rem;
       line-height: 1;
+      transform: translateY(-50%);
       transition: transform 160ms ease;
     }
 
     .sell-button:hover .action-arrow,
     .sell-button:focus-visible .action-arrow {
-      transform: translateX(5px);
+      transform: translate(5px, -50%);
     }
 
     .shop {
